@@ -14,4 +14,3 @@ urlpatterns = [
     path('__debug__/', include(debug_toolbar.urls)),
     path('rosetta/', include('rosetta.urls'))
 ]
-

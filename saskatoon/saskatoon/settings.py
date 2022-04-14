@@ -120,13 +120,20 @@ WSGI_APPLICATION = 'saskatoon.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('SASKATOON_DB_ENGINE'),
-        'NAME': os.getenv('SASKATOON_DB_NAME'),
-        'USER': os.getenv('SASKATOON_DB_USER'),
-        'PASSWORD': os.getenv('SASKATOON_DB_PASSWORD'),
-        'HOST': os.getenv('SASKATOON_DB_HOST'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': os.getenv('SASKATOON_DB_ENGINE'),
+#         'NAME': os.getenv('SASKATOON_DB_NAME'),
+#         'USER': os.getenv('SASKATOON_DB_USER'),
+#         'PASSWORD': os.getenv('SASKATOON_DB_PASSWORD'),
+#         'HOST': os.getenv('SASKATOON_DB_HOST'),
+#     }
+# }
 
 # Remove WARNINGS due to changes in Django3.2 where the type for primary keys can
 # now be customized (set by default to BigAutoField starting in Django 3.2):
