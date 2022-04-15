@@ -15,3 +15,7 @@ urlpatterns = [
     path('rosetta/', include('rosetta.urls'))
 ]
 
+handler400 = "sitebase.views.error_400"
+handler403 = "sitebase.views.error_403"
+handler404 = "sitebase.views.error_404"
+handler500 = "sitebase.views.error_500"
